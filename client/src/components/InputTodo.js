@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const InputTodo=()=>{
 
@@ -14,9 +15,12 @@ const InputTodo=()=>{
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify(body)
             })
+            toast.success("Task is Added!")
+             setDesc("");
             console.log(response)
         } catch (error) {
             console.log(error.message)
+             toast.error("Something Went Wrong!");
         }
     }
 

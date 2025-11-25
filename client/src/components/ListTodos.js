@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import './ListTodos.css';
 import { toast } from "react-toastify";
-
+import EditTodo from "./EditTodo";
 
 
 
@@ -51,24 +51,23 @@ const ListTodo=()=>{
    return (
         <>
         <h1 className="title">PERN Todo List</h1>
-
         <div className="table-container">
             <table className="todo-table">
             <thead>
                 <tr>
-                <th>ID</th>
                 <th>Description</th>
                 <th>Actions</th>
                 </tr>
             </thead>
 
+
             <tbody>
-                {todoList.map((obj) => (
+                {todoList.slice().sort((a, b) => a.todo_id - b.todo_id).map((obj) => (
                 <tr key={obj.todo_id}>
-                    <td>{obj.todo_id}</td>
                     <td>{obj.description}</td>
                     <td>
-                    <button className="edit-btn">Edit</button>
+                    {/* <button className="edit-btn">Edit</button> */}
+                    <EditTodo todo={obj}/>
                     <button className="delete-btn" onClick={()=>deleteTask(obj.todo_id)}>Delete</button>
                     </td>
                 </tr>
