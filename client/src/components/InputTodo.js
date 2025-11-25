@@ -8,9 +8,14 @@ const InputTodo=()=>{
     const onSubmitForm= async(e) =>{
         e.preventDefault();
         try {
-            const body= {description: desc}
+            if(desc==="" || desc===null )
+            {
+                toast.error("Please fill something before adding!")
+            }
+            else{
+                const body= {description: desc}
             //console.log(desc)
-            const response=await fetch("http://localhost:5000/todos",{
+                const response=await fetch("http://localhost:5000/todos",{
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify(body)
@@ -18,6 +23,8 @@ const InputTodo=()=>{
             toast.success("Task is Added!")
              setDesc("");
             console.log(response)
+            }
+            
         } catch (error) {
             console.log(error.message)
              toast.error("Something Went Wrong!");
