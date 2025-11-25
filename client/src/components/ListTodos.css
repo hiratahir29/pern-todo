@@ -1,0 +1,88 @@
+/* Page title */
+.title {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #4c4cff;
+  text-shadow: 0 2px 10px rgba(76, 76, 255, 0.3);
+}
+
+/* Center table on page */
+.table-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* Table styling */
+.todo-table {
+  width: 70%;
+  border-collapse: collapse;
+  background: #ffffff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Header */
+.todo-table thead {
+  background: linear-gradient(45deg, #6a5acd, #836fff);
+  color: white;
+}
+
+.todo-table th {
+  padding: 15px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border-bottom: 3px solid #ddd;
+}
+
+/* Row Styling */
+.todo-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Hover effect */
+.todo-table tbody tr:hover {
+  background-color: #f3f0ff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Zebra striping */
+.todo-table tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* Buttons Layout */
+.todo-table td button {
+  margin-right: 10px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Edit Button */
+.edit-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #45a049;
+}
+
+/* Delete Button */
+.delete-btn {
+  background-color: #ff4747;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #e63939;
+}
